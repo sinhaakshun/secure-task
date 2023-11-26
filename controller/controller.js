@@ -71,7 +71,7 @@ exports.hasAccess = async (req, res, next) => {
     const userAgent = req.get('User-Agent');
     const authToken = req.header('Authorization');
 
-    if (userAgent == 'PostmanRuntime/7.35.0' && authToken) {
+    if (userAgent == 'Dart' && authToken) {
         jwt.verify(authToken, process.env.SECRET_KEY, (err, decoded) => {
             if (err) {
                 return res.status(401).json({ msg: 'Invalid JWT' });
