@@ -20,7 +20,7 @@ exports.register = async (req, res) => {
         console.log('encrypt ',encryptedEmail);
 
         let userData = await User.findOne({email : encryptedEmail});
-        console.log('saasassaas ' ,userData)
+        console.log('user data ' ,userData)
         if(userData){
             return res.status(400).send({ msg : 'user already registered'})
         }
